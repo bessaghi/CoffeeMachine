@@ -1,6 +1,8 @@
 package fr.arolla.orders.service;
 import static org.junit.Assert.assertEquals;
 
+import fr.arolla.orders.util.Order;
+
 public class OrdersSenderTest {
 
 	public void testSendOrders() {
