@@ -3,6 +3,14 @@
   <groupId>fr.arolla</groupId>
   <artifactId>CoffeeMachine</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Coffee Machine Program</name>
-  <description>A program that takes coffee orders.</description>
+  <name>Coffee Machine Project</name>
+  <description>A coffee program that takes orders</description>
+  
+  <dependencies>
+  	<dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>4.13-beta-1</version>
+	</dependency>
+  </dependencies>
 </project>
