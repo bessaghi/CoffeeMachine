@@ -23,6 +23,9 @@ public class OrdersSenderTest {
 		Order orderJuice = new Order(Drinks.ORANGE_JUICE, "0", 0.6);
 		assertEquals("O::", OrdersSender.sendOrder(orderJuice));
 		
+		Order orderHotCoffee = new Order(Drinks.HOT_COFFEE, "0", 0.6);
+		assertEquals("Ch::", OrdersSender.sendOrder(orderHotCoffee));
+		
 		assertEquals("M:Preparation in progress..", OrdersSender.forwardMessage("Preparation in progress.."));
 		
 		// case not enough money inserted
