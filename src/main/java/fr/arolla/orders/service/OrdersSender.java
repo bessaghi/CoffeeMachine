@@ -17,7 +17,25 @@ public class OrdersSender {
 	 * @return a String containing the order.
 	 */
 	public static String sendOrder(Order order) {
-		return order.getDrink().getAcronym() + ":" + order.getSugar() + ":" + order.getStick();
+		if (checkAmountInserted(order) == 0) {
+			return order.getDrink().getAcronym() + ":" + order.getSugar() + ":" + order.getStick();
+		}
+		else {
+			return forwardMessage("Credit not sufficient, please add " + checkAmountInserted(order) + " to complete your order.");
+		}
+	}
+	
+	/**
+	 * Checks the amount inserted. 
+	 * 
+	 * @param order the order to check.
+	 * @return 0 if the amount is higher or equal to the price, and the difference otherwise
+	 */
+	public static double checkAmountInserted(Order order) {
+		if (order.getMoney() >= order.getDrink().getPrice()) {
+			return 0;
+		}
+		return order.getDrink().getPrice() - order.getMoney();
 	}
 	
 	/**
