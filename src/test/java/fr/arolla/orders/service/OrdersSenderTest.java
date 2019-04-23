@@ -10,6 +10,7 @@ public class OrdersSenderTest {
 	
 	@Test
 	public void testSendOrder() {
+		// case enough money inserted
 		Order orderTeaSugar = new Order(Drinks.TEA,"1", 0.4);
 		assertEquals("T:1:0", OrdersSender.sendOrder(orderTeaSugar));
 		
@@ -20,6 +21,14 @@ public class OrdersSenderTest {
 		assertEquals("C:2:0", OrdersSender.sendOrder(orderCoffeeSugar));
 		
 		assertEquals("M:Preparation in progress..", OrdersSender.forwardMessage("Preparation in progress.."));
+		
+		// case not enough money inserted
+		Order orderCoffeeSugarMoneyMissing = new Order(Drinks.COFFEE,"2", 0.3);
+		assertEquals("M:Credit not sufficient, please add 0.3 to complete your order.", OrdersSender.sendOrder(orderCoffeeSugarMoneyMissing));
+		
+		// case more money inserted
+		Order orderCoffeeSugarMoreMoney = new Order(Drinks.COFFEE,"2", 0.7);
+		assertEquals("C:2:0", OrdersSender.sendOrder(orderCoffeeSugarMoreMoney));
 	}
 	
 	@Test
