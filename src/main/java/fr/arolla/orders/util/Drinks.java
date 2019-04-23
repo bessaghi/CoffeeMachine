@@ -7,17 +7,23 @@ package fr.arolla.orders.util;
  */
 public enum Drinks {
 
-	CHOCOLATE ("H"),
-	COFFEE ("C"),
-	TEA ("T");
+	CHOCOLATE ("H", 0.5),
+	COFFEE ("C", 0.6),
+	TEA ("T", 0.4);
 	
 	private String acronym;
+	private double price;
 	
-	Drinks (String acronym) {
+	Drinks (String acronym, double price) {
 		this.acronym = acronym;
+		this.price = price;
 	}
 	
 	public String getAcronym() {
 		return acronym;
+	}
+	
+	public double getPrice() {
+		return price;
 	}
 }
