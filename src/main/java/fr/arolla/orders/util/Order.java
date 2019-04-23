@@ -8,7 +8,7 @@ package fr.arolla.orders.util;
 public class Order {
 
 	private Drinks drink;
-	private int sugar;
+	private String sugar;
 	private String stick;
 	
 	/**
@@ -17,16 +17,20 @@ public class Order {
 	 * @param drink the drink type chosen.
 	 * @param sugar the amount of sugar chosen.
 	 */
-	public Order(Drinks drink, int sugar) {
+	public Order(Drinks drink, String sugar) {
 		super();
 		this.drink = drink;
-		this.sugar = sugar;
+		this.sugar = isSugar(sugar) ? sugar : "";
 		this.stick = getStick();
 	}
 
+	private boolean isSugar(String sugar) {
+		return "1".equals(sugar) || "2".equals(sugar);
+	}
+	
 	// getters
 	public String getStick() {
-		if (sugar > 0) {
+		if (sugar != "") {
 			return "0";
 		}
 		return "";
@@ -36,7 +40,7 @@ public class Order {
 		return drink;
 	}
 
-	public int getSugar() {
+	public String getSugar() {
 		return sugar;
 	}
 	
