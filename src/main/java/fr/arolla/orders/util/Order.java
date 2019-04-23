@@ -1,11 +1,15 @@
 package fr.arolla.orders.util;
 
+import java.util.Arrays;
+
 /**
  * The Order Object.
  * @author bessaghi
  *
  */
 public class Order {
+	
+	private static final String[] sugarValues = new String[] {"0", "1"};
 
 	private Drinks drink;
 	private String sugar;
@@ -28,7 +32,7 @@ public class Order {
 	}
 
 	private boolean isSugar(String sugar) {
-		return "1".equals(sugar) || "2".equals(sugar);
+		return Arrays.asList(sugarValues).contains(sugar);
 	}
 	
 	// getters
