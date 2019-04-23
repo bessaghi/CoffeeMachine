@@ -18,5 +18,7 @@ public class OrdersSenderTest {
 		
 		Order orderCoffeeSugar = new Order(Drinks.COFFEE,"2");
 		assertEquals("C:2:0", OrdersSender.sendOrder(orderCoffeeSugar));
+		
+		assertEquals("M:Preparation in progress..", OrdersSender.forwardMessage("Preparation in progress.."));
 	}
 }
