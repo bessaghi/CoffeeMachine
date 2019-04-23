@@ -10,7 +10,10 @@ public class OrdersSenderTest {
 	
 	@Test
 	public void testSendOrder() {
-		Order order = new Order(Drinks.TEA,1);
-		assertEquals("T:1:0", OrdersSender.sendOrder(order));
+		Order orderTeaSugar = new Order(Drinks.TEA,1);
+		assertEquals("T:1:0", OrdersSender.sendOrder(orderTeaSugar));
+		
+		Order orderChocolateNoSugar = new Order(Drinks.CHOCOLATE,0);
+		assertEquals("H::", OrdersSender.sendOrder(orderChocolateNoSugar));
 	}
 }
