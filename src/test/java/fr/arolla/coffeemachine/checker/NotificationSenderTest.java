@@ -5,7 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import fr.arolla.orders.service.EmailNotifier;
+import fr.arolla.coffeemachine.interfaces.BeverageQuantityChecker;
+import fr.arolla.coffeemachine.interfaces.EmailNotifier;
 import fr.arolla.orders.service.NotificationSender;
 import fr.arolla.orders.util.Drinks;
 import fr.arolla.orders.util.Order;

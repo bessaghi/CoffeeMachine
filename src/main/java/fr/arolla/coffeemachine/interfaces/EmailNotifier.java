@@ -1,4 +1,4 @@
-package fr.arolla.orders.service;
+package fr.arolla.coffeemachine.interfaces;
 
 public interface EmailNotifier {
 	void notifyMissingDrink(String drink);

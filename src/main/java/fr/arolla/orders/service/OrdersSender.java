@@ -43,7 +43,7 @@ public class OrdersSender {
 	 * Checks the amount inserted. 
 	 * 
 	 * @param order the order to check.
-	 * @return 0 if the amount is higher or equal to the price, and the difference otherwise
+	 * @return 0 if the amount is higher or equal to the price, and the difference otherwise.
 	 */
 	public static double checkAmountInserted(Order order) {
 		if (order.getMoney() >= order.getDrink().getPrice()) {

@@ -1,6 +1,7 @@
 package fr.arolla.orders.service;
 
-import fr.arolla.coffeemachine.checker.BeverageQuantityChecker;
+import fr.arolla.coffeemachine.interfaces.BeverageQuantityChecker;
+import fr.arolla.coffeemachine.interfaces.EmailNotifier;
 import fr.arolla.orders.util.Order;
 
 /**
