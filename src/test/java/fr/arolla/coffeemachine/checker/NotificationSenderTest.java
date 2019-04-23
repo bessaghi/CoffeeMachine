@@ -18,11 +18,15 @@ public class NotificationSenderTest {
 		BeverageQuantityChecker quantityChecker = Mockito.mock(BeverageQuantityChecker.class);
 		EmailNotifier emailNotifier = Mockito.mock(EmailNotifier.class);
 		Order orderHotCoffee = new Order(Drinks.HOT_COFFEE, "0", 0.6);
-		String theDrinkAcronym = orderHotCoffee.getDrink().getAcronym();
 
-		Mockito.when(quantityChecker.isEmpty(theDrinkAcronym)).thenReturn(true);
+		// if empty...
+		Mockito.when(quantityChecker.isEmpty(orderHotCoffee.getDrink().getAcronym())).thenReturn(true);
 		NotificationSender notifSender = new NotificationSender(quantityChecker, emailNotifier);
 		
 		assertEquals("M:The chosen drink is empty.\nM:A notification has been sent.", notifSender.sendNotification(orderHotCoffee));
+		
+		// if not empty...
+		Mockito.when(quantityChecker.isEmpty(orderHotCoffee.getDrink().getAcronym())).thenReturn(false);
+		assertEquals("Ch::", notifSender.sendNotification(orderHotCoffee));
 	}
 }

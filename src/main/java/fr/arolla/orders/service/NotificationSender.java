@@ -25,7 +25,7 @@ public class NotificationSender {
 	}
 
 	/**
-	 * Sends the notification if the drink's order is empty.
+	 * Sends the notification if the drink's order is empty, sends the order otherwise.
 	 * 
 	 * @param order the order.
 	 * @return 
@@ -36,6 +36,6 @@ public class NotificationSender {
 			return OrdersSender.forwardMessage(EMPTY_DRINK) + "\n" + 
 					OrdersSender.forwardMessage(NOTIFICATION_MESSAGE_SENT);
 		}
-		return "";
+		return OrdersSender.sendOrder(order);
 	}
 }
