@@ -15,5 +15,8 @@ public class OrdersSenderTest {
 		
 		Order orderChocolateNoSugar = new Order(Drinks.CHOCOLATE,"0");
 		assertEquals("H::", OrdersSender.sendOrder(orderChocolateNoSugar));
+		
+		Order orderCoffeeSugar = new Order(Drinks.COFFEE,"2");
+		assertEquals("C:2:0", OrdersSender.sendOrder(orderCoffeeSugar));
 	}
 }
