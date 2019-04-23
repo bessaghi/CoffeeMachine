@@ -9,6 +9,18 @@ import fr.arolla.orders.util.Order;
  *
  */
 public class OrdersSender {
+	
+	private static int ordersNumber = 0;
+	private static double moneyEarned = 0;
+	
+	// getters
+	public static int getOrdersNumber() {
+		return ordersNumber;
+	}
+
+	public static double getMoneyEarned() {
+		return moneyEarned;
+	}
 
 	/**
 	 * Translates the order to a String understandable by the coffee maker.
@@ -18,6 +30,8 @@ public class OrdersSender {
 	 */
 	public static String sendOrder(Order order) {
 		if (checkAmountInserted(order) == 0) {
+			ordersNumber++;
+			moneyEarned += order.getMoney(); 
 			return order.getDrink().getAcronym() + ":" + order.getSugar() + ":" + order.getStick();
 		}
 		else {
