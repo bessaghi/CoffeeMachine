@@ -19,4 +19,14 @@ public class OrdersSender {
 	public static String sendOrder(Order order) {
 		return order.getDrink().getAcronym() + ":" + order.getSugar() + ":" + order.getStick();
 	}
+	
+	/**
+	 * Forwards a message to the User.
+	 * 
+	 * @param theMessage to forward. 
+	 * @return
+	 */
+	public static String forwardMessage(String theMessage) {
+		return "M:" + theMessage;
+	}
 }
