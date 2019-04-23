@@ -23,6 +23,6 @@ public class NotificationSenderTest {
 		Mockito.when(quantityChecker.isEmpty(theDrinkAcronym)).thenReturn(true);
 		NotificationSender notifSender = new NotificationSender(quantityChecker, emailNotifier);
 		
-		assertEquals("M:A notification has been sent.", notifSender.sendNotification(orderHotCoffee));
+		assertEquals("M:The chosen drink is empty.\nM:A notification has been sent.", notifSender.sendNotification(orderHotCoffee));
 	}
 }

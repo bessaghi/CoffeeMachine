@@ -13,6 +13,7 @@ import fr.arolla.orders.util.Order;
 public class NotificationSender {
 	
 	private static final String NOTIFICATION_MESSAGE_SENT = "A notification has been sent.";
+	private static final String EMPTY_DRINK = "The chosen drink is empty.";
 
 	private BeverageQuantityChecker quantityChecker;
 	private EmailNotifier emailNotifier;
@@ -32,7 +33,8 @@ public class NotificationSender {
 	public String sendNotification(Order order) {
 		if (quantityChecker.isEmpty(order.getDrink().getAcronym())) {
 			emailNotifier.notifyMissingDrink(order.getDrink().getAcronym());
-			return OrdersSender.forwardMessage(NOTIFICATION_MESSAGE_SENT);
+			return OrdersSender.forwardMessage(EMPTY_DRINK) + "\n" + 
+					OrdersSender.forwardMessage(NOTIFICATION_MESSAGE_SENT);
 		}
 		return "";
 	}
