@@ -1,12 +1,16 @@
 package fr.arolla.orders.service;
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+
+import fr.arolla.orders.util.Drinks;
 import fr.arolla.orders.util.Order;
 
 public class OrdersSenderTest {
-
-	public void testSendOrders() {
-		Order order = new Order("tea",1);
+	
+	@Test
+	public void testSendOrder() {
+		Order order = new Order(Drinks.TEA,1);
 		assertEquals("T:1:0", OrdersSender.sendOrder(order));
 	}
 }
