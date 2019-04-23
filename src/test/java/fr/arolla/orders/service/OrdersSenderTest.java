@@ -21,4 +21,10 @@ public class OrdersSenderTest {
 		
 		assertEquals("M:Preparation in progress..", OrdersSender.forwardMessage("Preparation in progress.."));
 	}
+	
+	@Test
+	public void testCheckAmountInserted() {
+		Order orderTeaRightPrice = new Order(Drinks.TEA, "0", 0.4);
+		assertTrue(OrdersSender.checkAmountInserted(orderTeaRightPrice));
+	}
 }
