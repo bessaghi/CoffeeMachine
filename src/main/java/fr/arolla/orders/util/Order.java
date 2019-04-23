@@ -7,8 +7,9 @@ package fr.arolla.orders.util;
  */
 public class Order {
 
-	private String drink;
+	private Drinks drink;
 	private int sugar;
+	private String stick;
 	
 	/**
 	 * The constructor.
@@ -16,11 +17,27 @@ public class Order {
 	 * @param drink the drink type chosen.
 	 * @param sugar the amount of sugar chosen.
 	 */
-	public Order(String drink, int sugar) {
+	public Order(Drinks drink, int sugar) {
 		super();
 		this.drink = drink;
 		this.sugar = sugar;
+		this.stick = getStick();
 	}
-	
+
+	// getters
+	public String getStick() {
+		if (sugar > 0) {
+			return "0";
+		}
+		return "";
+	}
+
+	public Drinks getDrink() {
+		return drink;
+	}
+
+	public int getSugar() {
+		return sugar;
+	}
 	
 }
