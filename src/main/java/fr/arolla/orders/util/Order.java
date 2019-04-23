@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class Order {
 	
-	private static final String[] sugarValues = new String[] {"0", "1"};
+	private static final String[] sugarValues = new String[] {"1", "2"};
 
 	private Drinks drink;
 	private String sugar;
